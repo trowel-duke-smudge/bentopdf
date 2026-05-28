@@ -70,11 +70,13 @@ ENV SITE_URL=$SITE_URL
 
 ENV NODE_OPTIONS="--max-old-space-size=3072"
 
-RUN --mount=type=secret,id=VITE_CORS_PROXY_URL,required=false \
-    --mount=type=secret,id=VITE_CORS_PROXY_SECRET,required=false \
-    VITE_CORS_PROXY_URL=$(cat /run/secrets/VITE_CORS_PROXY_URL 2>/dev/null || echo "") \
-    VITE_CORS_PROXY_SECRET=$(cat /run/secrets/VITE_CORS_PROXY_SECRET 2>/dev/null || echo "") \
-    npm run build:with-docs
+ARG VITE_CORS_PROXY_URL
+ARG VITE_CORS_PROXY_SECRET
+
+ENV VITE_CORS_PROXY_URL=$VITE_CORS_PROXY_URL
+ENV VITE_CORS_PROXY_SECRET=$VITE_CORS_PROXY_SECRET
+
+RUN npm run build:with-docs
 
 # Production stage
 FROM quay.io/nginx/nginx-unprivileged:alpine-slim
