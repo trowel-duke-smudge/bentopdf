@@ -13,7 +13,7 @@
     <meta name="robots" content="index, follow" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.bentopdf.com/faq" />
+    <link rel="canonical" href="https://www.bentopdf.com/faq.html" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -48,6 +48,7 @@
     />
     <meta name="twitter:site" content="@BentoPDF" />
 
+    <title>FAQ - Frequently Asked Questions | BentoPDF</title>
     <link href="/src/css/styles.css" rel="stylesheet" />
 
     <!-- Web App Manifest -->
@@ -266,6 +267,25 @@
             </p>
           </div>
         </details>
+      <details
+          class="bg-gray-800 border border-gray-700 rounded-lg p-5 group"
+        >
+          <summary class="flex items-center justify-between cursor-pointer">
+            <h3 class="font-semibold text-white text-lg">
+              What is your affiliation with BentoPDF?
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 text-indigo-400 icon flex-shrink-0"
+            ></i>
+          </summary>
+          <div class="mt-4 text-gray-400">
+            <p>
+              I am not affiliated with BentoPDF at all. This is a self-hosted version of the tool. 
+            </p>
+            <p>I have set this up for my own, personal use only.</p>
+          </div>
+        </details>
       </div>
 
       <div class="section-divider mt-16"></div>
@@ -285,6 +305,7 @@
           Contact Us
         </a>
       </section>
+ 
     </div>
 
     {{> footer }}
@@ -351,6 +372,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "BentoPDF is built on the power of modern web technologies. We primarily use JavaScript libraries like PDF-lib.js and PDFKit.js that are compiled to run efficiently in your browser via WebAssembly. This allows for powerful, server-like processing without your data ever leaving your machine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is your affiliation with BentoPDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "I am not affiliated with BentoPDF at all. This is a self-hosted version of the tool. I have set this up for my own, personal use only."
             }
           }
         ]
